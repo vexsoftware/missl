@@ -6,19 +6,28 @@
 
 Add this line to your application's Gemfile:
 
-    gem 'missl'
+```ruby
+gem 'missl', :git => 'git://github.com/vexsoftware/missl.git'
+```
 
 And then execute:
 
-    $ bundle
+```bash
+$ bundle
+```
 
-Or install it yourself as:
+If you are using Rails, add this line to your routes file:
 
-    $ gem install missl
+```ruby
+mount Missl::Base => "/missl", :as => :missl
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+To proxy a non-SSL image on Rails, use the following for the image URL:
+```ruby
+missl_path(:url => "http://example.com/path/to/image.png")
+```
 
 ## Contributing
 
@@ -27,3 +36,7 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## License
+
+Copyright (c) 2012 Vex Software LLC, released under the MIT license.
