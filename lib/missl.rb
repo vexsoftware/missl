@@ -21,6 +21,8 @@ module Missl
     end
 
     get '/' do
+      NewRelic::Agent.abort_transaction! if defined?(NewRelic)
+
       # Make sure there is a URL.
       if params[:url].nil? || params[:url].empty?
         return 404
