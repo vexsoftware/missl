@@ -1,6 +1,6 @@
 # MISSL
 
-**M**ake **I**mages **SSL** is a simple image proxy based on Sinatra. MISSL performs basic filtering to limit content type to images, and content length to 5MB. Local IP addresses are also restricted.
+**M**ake **I**mages **SSL** is a simple image proxy based using a Rack middleware. MISSL performs basic filtering to limit content type to images, and content length to 5MB. Local IP addresses are also restricted.
 
 ## Installation
 
@@ -14,12 +14,6 @@ And then execute:
 
 ```bash
 $ bundle
-```
-
-If you are using Rails, add this line to your routes file:
-
-```ruby
-mount Missl::Base => "/missl", :as => :missl
 ```
 
 ## Usage
